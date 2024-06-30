@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Big task of bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .ex-bold {
+      font-weight: 900;
+    }
+
+    .btn-order {
+      border-radius: 50px;
+    }
+
+    .price-box {
+      position: absolute;
+      z-index: 1;
+      top: 50px;
+      left: 15%;
+      width: 150px;
+      height: 150px;
+      background: orange;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-img {
+      padding: 2rem;
+
+    }
+
+    .item-tag {
+      background-color: red;
+      width: fit-content;
+      border-radius: 10px;
+      color: white;
+      padding: 3px 16px 0px 16px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    @media screen and (max-width:375px) {
+
+      .line {
+        width: 50px;
+        height: 25px;
+      }
+
+      .feature {
+        font-size: 16px;
+        /* display: 6; */
+      }
+
+      .card {
+        margin-bottom: 5px;
+      }
+    }
+
+    @media screen and (min-width:425px) and (max-width:768px) {
+      .line {
+        width: 100px;
+        height: 50px;
+
+
+      }
+
+    }
+
+    .icons {
+      width: 70px;
+      height: 70px;
+      background-color: white;
+      border-bottom: 1px solid rgb(156, 153, 153);
+      margin: auto;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      /* display: flex;*/
+      margin-bottom: -40px;
+    }
+
+    .inner {
+      background-color: orange;
+      border-radius: 50%;
+      height: 50px;
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      border-radius: 20px;
+      margin-bottom: 50px;
+      /* margin-bottom: 10px; */
+    }
+
+    .card1 {
+      background-color: antiquewhite;
+    }
+
+    .third {
+      width: 100%;
+      height: 100vh;
+      background-image: url(pizza5.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      align-content: center;
+      background-attachment: fixed;
+      /* align-items: center; */
+      /* position: ce; */
+      background-position: center;
+    }
+
+    #icon1 {
+      /* width: fit-content; */
+      background-color: white;
+      color: rgb(236, 32, 32);
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    #icon {
+      /* width: fit-content; */
+      background-color: white;
+      color: rgb(44, 42, 42);
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    #icon3 {
+      /* width: fit-content; */
+      background-color: white;
+      color: rgb(107, 15, 182);
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+
+    @media screen and (max-width:768px) {
+      .third-pizza {
+        align-items: center;
+      }
+
+      .card-box {
+        text-align: center;
+      }
+
+
+
+    }
+
+    .item-wrapper {
+      border-radius: 9px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .reward {
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background-color: rgb(72, 170, 27);
+    }
+
+    .card-img {
+    
+      
+    }
+
+    .section h2.section-head {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .section h2.section-head .line {
+      background: rgb(194, 177, 177);
+      height: 3px;
+      flex: 1;
+      margin: 0 10px;
+      /* Adjust spacing as needed */
+    }
+
+    .section h2.section-head img.responsive {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .section h2.section-head .line {
+        flex: 1;
+        margin: 0 5px;
+        /* Adjust spacing as needed */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section h2.section-head .line {
+        flex: 1;
+        margin: 0 2px;
+        /* Adjust spacing as needed */
+      }
+
+      .section h2.section-head img.responsive {
+        max-width: 80%;
+        /* Ensure the image scales properly on very small screens */
+        height: auto;
+        /* Maintain aspect ratio */
+      }
+    }
+    body{
+      overflow-x: hidden;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container-fluid bg-danger">
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dropdown">
+          <div class="container-fluid">
+            <a class="navbar-brand">
+              <img src="pizza-removebg-preview.png" height="50" width="50">
+              <span class="" style="font-family: cursive;">DINERMY</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    LIVE DEMO
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Thai Food</a></li>
+                    <hr>
+                    <li><a class="dropdown-item" href="#">Pizza Food</a></li>
+                    <hr>
+                    <li><a class="dropdown-item">Tasty Food</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    LIVE DEMO BLOCKS
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Header/Footer/Pricing/Info</a></li>
+                    <hr>
+                    <li><a class="dropdown-item" href="#">Content/Shop/video</a></li>
+                    <hr>
+                    <li><a class="dropdown-item">progres/contact/</a></li>
+                    <hr>
+                    <li><a class="dropdown-item" href="#">Gallary/Team</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <button type="button" class="btn bg-light" style="border-radius: 50px; color: red;">BUY NOW</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+  
+    <section class=" my-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+          <div class="d-flex ">
+            <h2 class="display-7 text-warning  feature">HAPPY HOUR SPECIAL</h2>
+            <span><svg height="50" width="200" xmlns="http://www.w3.org/2000/svg" class="line">
+                <line x1="0" y1="10" x2="250" y2="10" style="stroke:orange;stroke-width:5" />
+              </svg>
+            </span>
+
+          </div>
+
+          <h2 class="display-1 text-white ex-bold">PIZZA BAR</h2>
+          <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab fugiat tempore aut sit
+            labore optio officia, ipsam, atque fugit eveniet voluptate unde quis possimus nostrum doloribus fuga et
+            iure earum!</p>
+          <div class="text-center my-2">
+            <button type="button" class="btn btn-warning text-uppercase btn-order"><span><i
+                  class="fa-solid fa-cart-shopping"></i> order online</span></button>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6 position-relative">
+          <div class="price-box">
+            <h2 class="text-center">only</h2>
+            <h2 class="display-4 text-danger text-center" style="font-weight: 900;">$15</h2>
+          </div>
+          <div class="d-flex justify-content-center position-relative">
+            <img src="pizza-removebg-preview.png" class="img-fluid" alt="Pizza">
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+  </div>
+
+  <div class=" second section ">
+    <div class="container-fluid">
+      <div class="container">
+
+        <div class="row m-lg-4 m-md-4">
+          <h5 class=" text-danger text-uppercase text-center " style="font-family: cursive;"> specials combo</h5>
+          <h2 class="text-center " style="font-weight: 900;">Our Best Sellers</h2>
+        </div>
+        <div class="row">
+
+          <div class=" item col-12  col-md-6  col-lg-3">
+            <div class=" card">
+              <div class="card-img">
+                <img src="pizza2-removebg-preview.png" class="img-fluid">
+
+              </div>
+
+              <div class="card-body">
+                <h2 class="card-title text-center">
+                  Thai Combo
+                </h2>
+                <div class="card-text">
+                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, nam.
+                  </p>
+                  <h2 class="text-center" style="font-weight: 900;">$12</h2>
+
+                </div>
+                <div class="icons">
+
+                  <div class="inner ">
+                    <div>
+                      <i class="fa-solid fa-cart-shopping"></i>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div class=" col-12 col-md-6 col-lg-3">
+            <div class=" card ">
+              <div class="card-img">
+                <img src="pizza2-removebg-preview.png" class="img-fluid ">
+              </div>
+              <div class="card-body">
+                <h2 class="card-title text-center">
+                  Thai Combo
+                </h2>
+                <div class="card-text">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, nam.
+
+                  </p>
+                  <h2 class="text-center" style="font-weight: 900;">$12</h2>
+                </div>
+                <div class="icons">
+
+                  <div class="inner ">
+                    <div>
+                      <i class="fa-solid fa-cart-shopping"></i>
+
+                    </div>
+                  </div>           
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+          <div class="col col-12  col-md-6  col-lg-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="pizza2-removebg-preview.png" class="img-fluid">
+
+              </div>
+              <div class="card-body">
+                <h2 class="card-title text-center">
+                  Thai Combo
+                </h2>
+                <div class="card-text">
+                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, nam.
+                  </p>
+                  <h2 class="text-center" style="font-weight: 900;">$12</h2>
+
+                </div>
+                <div class="icons">
+
+                  <div class="inner ">
+                    <div>
+                      <i class="fa-solid fa-cart-shopping"></i>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            zz
+
+          </div>
+          <div class="   col-12 col-md-6  col-lg-3">
+            <div class="card">
+              <div class="card-img">
+                <img src="pizza2-removebg-preview.png" class="img-fluid">
+
+              </div>
+              <div class="card-body">
+                <h2 class="card-title text-center">
+                  Thai Combo
+                </h2>
+                <div class="card-text">
+                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, nam.
+                  </p>
+                  <h2 class="text-center" style="font-weight: 900;">$12</h2>
+
+                </div>
+                <div class="icons">
+
+                  <div class="inner ">
+                    <div>
+                      <i class="fa-solid fa-cart-shopping"></i>
+
+                    </div>
+                  </div>
+                   
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+
+
+        <!-- Additional content can go here -->
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class=" third section">
+    <div class="container-fluid">
+      <div class="container">
+        <h2 class=" text-uppercase text-white">bye<span class="display-2">2</span> get<span class="display-2">1</span>
+        </h2>
+        <h1 class=" text-success text-uppercase" style="font-weight: 900;">free pizza!</h1>
+        <button type="button" class="btn btn-success text-uppercase text-white" style="border-radius: 50px;">
+          <i class="fa-solid fa-cart-shopping m-2"></i>order online
+        </button>
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="fourth section">
+    <div class="container-fluid">
+      <div class="container p-4">
+        <div class="row ">
+          <div class="col-lg-6 col-md-12 col-sm-12 ">
+            <h4 class="text-danger text-uppercase" style="font-family: cursive;">welcome</h4>
+            <h1 class="" style="font-weight: 800;">We makethe bet in your town</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, quae?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptates provident quas inventore
+              dolor,
+              voluptatum, dolores eveniet ducimus adipisci in non minus ad temporibus minima. Repudiandae necessitatibus
+              accusantium distinctio in.</p>
+            <button type="button" class="btn btn-danger text-uppercase " style="border-radius: 50px;"><i
+                class="fa-sharp fa-solid fa-arrow-right m-2"></i>get direction </button>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 ">
+            <div class="row">
+
+              <div class="col-lg-8 col-md-12">
+                <span class="display-5"> <i class="fa-brands fa-apple "></i></span>
+                <p class="">Lorem ipsum dolor sit amet.</p>
+                <span class="display-5"><i class="fa-solid fa-globe"></i>
+                </span>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, numquam.</p>
+                <span class="display-5"><i class="fa-solid fa-user-group"></i></span>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, sequi!</p>
+              </div>
+              <div class="col-lg-4 col-md-12">
+                <div class="third-pizza">
+                  <div class="  row">
+                    <img src="pizza-removebg-preview.png" class=" pizza img-fluid">
+
+                  </div>
+                  <div class="row">
+                    <span class="display-5"><i class="fa-solid fa-box"></i></span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, temporibus.</p>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="fifth section ">
+    <div class="container-fluid">
+      <div class="container bg-dark pt-4">
+        <div class="row">
+          <h6 class="text-uppercase text-danger text-center" style="font-family: cursive;">ingridient</h6>
+          <h2 class=" text-white text-center">Cooked with natural ingredient</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-12">
+            <div class="text-white">
+              <h6 class="text-danger">Fresh Vegetable</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quas doloremque modi numquam
+                repudiandae
+                hic in possimus aliquid harum fuga, laudantium, blanditiis assumenda eligendi et animi repellat
+                excepturi
+                vitae cupiditate!</p>
+              <h6 class="text-danger">Lettuce Leaf</h6>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, necessitatibus?</p>
+              <h6 class="text-danger">Lettuce Leaf</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque beatae neque, eveniet quos
+                obcaecati placeat nemo sit temporibus ullam? Corporis, quidem aspernatur? Fugiat sunt quasi debitis
+                totam
+                excepturi quibusdam.</p>
+            </div>
+          </div>
+          <div class=" col-lg-4 col-md-12" style="display: flex; align-items: center; justify-content: center;">
+
+            <img src="pizza-removebg-preview.png" class="img-fluid">
+
+          </div>
+          <div class="col-lg-4 col-md-12">
+            <div class="text-white">
+              <h6 class="text-danger">Fresh Vegetable</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quas doloremque modi numquam
+                repudiandae
+                hic in possimus aliquid harum fuga, laudantium, blanditiis assumenda eligendi et animi repellat
+                excepturi
+                vitae cupiditate!</p>
+              <h6 class="text-danger">Lettuce Leaf</h6>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, necessitatibus?</p>
+              <h6 class="text-danger">Lettuce Leaf</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque beatae neque, eveniet quos
+                obcaecati placeat nemo sit temporibus ullam? Corporis, quidem aspernatur? Fugiat sunt quasi debitis
+                totam
+                excepturi quibusdam.</p>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+  <div class="six section">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <h2 class="text-center text-danger" style="font-family: cursive;">Menu</h2>
+          <h2 class=" text-center" style="font-weight: 900;">Choose your dish</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-lg-6">
+            <div class="col">
+              <div class="row">
+                <h2 class="item-tag ">sushi</h2>
+                <div class="item-title d-flex m-2" style="align-items: baseline;">
+                  <h2 class="">Salmon Pizza </h2>
+                  <p>. . . . . . . . . . . . . . . . . . . . . . .</p>
+                  <h2 class="text-danger">$18</h2>
+
+                </div>
+                <div class="mb-4">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita fugit labore itaque
+                    doloribus, consequuntur odit! Corrupti ipsam nemo ea.
+
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <h2 class="item-tag ">thai food</h2>
+                <div class="item-title d-flex m-2" style="align-items: baseline;">
+                  <h2 class="">Spicy Fish pizza</h2>
+                  <p>. . . . . . . . . . . . . . . . . . . . . . .</p>
+                  <h2 class="text-danger">$28</h2>
+
+                </div>
+                <div class="mb-4">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita fugit labore itaque
+                    doloribus, consequuntur odit! Corrupti ipsam nemo ea.
+
+                  </p>
+
+                </div>
+
+              </div>
+              <div class="row">
+                <h2 class="item-tag ">pizza</h2>
+                <div class="item-title d-flex m-2" style="align-items: baseline;">
+                  <h2 class="">Mozzella Pizza</h2>
+                  <p>. . . . . . . . . . . . . . . . . . . . . . .</p>
+                  <h2 class="text-danger">$18</h2>
+
+                </div>
+                <div class="mb-4">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita fugit labore itaque
+                    doloribus, consequuntur odit! Corrupti ipsam nemo ea.
+
+                  </p>
+
+                </div>
+
+
+              </div>
+              <div class="row">
+                <h2 class="item-tag ">sushi</h2>
+                <div class="item-title d-flex m-2" style="align-items: baseline;">
+                  <h2 class="">Salmon Pizza </h2>
+                  <p>. . . . . . . . . . . . . . . . . . . . . . .</p>
+                  <h2 class="text-danger">$18</h2>
+
+                </div>
+                <div class="mb-4">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita fugit labore itaque
+                    doloribus, consequuntur odit! Corrupti ipsam nemo ea.
+
+                  </p>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6">
+            <div class="col">
+              <div class="row">
+                <h2 class="item-tag ">sushi</h2>
+                <div class="item-title d-flex m-2" style="align-items: baseline;">
+                  <h2 class="">Salmon Pizza </h2>
+                  <p>. . . . . . . . . . . . . . . . . . . . . . .</p>
+                  <h2 class="text-danger">$18</h2>
+
+                </div>
+                <div class="mb-4">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita fugit labore itaque
+                    doloribus, consequuntur odit! Corrupti ipsam nemo ea.
+
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <h2 class="item-tag ">thai food</h2>
+                <div class="item-title d-flex m-2" style="align-items: baseline;">
+                  <h2 class="">Spicy Fish pizza</h2>
+                  <p>. . . . . . . . . . . . . . . . . . . . . . .</p>
+                  <h2 class="text-danger">$28</h2>
+
+                </div>
+                <div class="mb-4">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita fugit labore itaque
+                    doloribus, consequuntur odit! Corrupti ipsam nemo ea.
+
+                  </p>
+
+                </div>
+
+              </div>
+              <div class="row">
+                <h2 class="item-tag ">pizza</h2>
+                <div class="item-title d-flex m-2" style="align-items: baseline;">
+                  <h2 class="">Mozzella Pizza</h2>
+                  <p>. . . . . . . . . . . . . . . . . . . . . . .</p>
+                  <h2 class="text-danger">$18</h2>
+
+                </div>
+                <div class="mb-4">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita fugit labore itaque
+                    doloribus, consequuntur odit! Corrupti ipsam nemo ea.
+
+                  </p>
+
+                </div>
+
+
+              </div>
+              <div class="row">
+                <h2 class="item-tag ">sushi</h2>
+                <div class="item-title d-flex m-2" style="align-items: baseline;">
+                  <h2 class="">Salmon Pizza </h2>
+                  <p>. . . . . . . . . . . . . . . . . . . . . . .</p>
+                  <h2 class="text-danger">$18</h2>
+
+                </div>
+                <div class="mb-4">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita fugit labore itaque
+                    doloribus, consequuntur odit! Corrupti ipsam nemo ea.
+
+                  </p>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class=" eight section">
+    <div class="container-fluid">
+      <div class="" style="background-attachment: fixed;">
+        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/Lyj8wH2iTYg?si=CaTZksroBgqKlaKC"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  
+      </div>
+    </div>
+
+  </div>
+  <div class="nine section">
+    <div class="container-fluid">
+      <div class="container pt-4">
+        <div class="row">
+          <h4 class="text-success text-uppercase text-center" style="font-family: cursive;">reward</h4>
+          <h2 class="text-center">Clients review</h2>
+        </div>
+        <div class="row">
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                class="active reward" aria-current="true" aria-label="Slide 1"
+                style="background-color: green;width: 15px;height: 15px;border-radius: 50%;"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2" class="reward"
+                style="background-color: rgb(45, 0, 128); width: 15px; height: 15px; border-radius: 50%;"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3" class="reward"
+                style="background-color: yellow; width: 15px; height: 15px;"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-lg-6 col-md-12 col-sm-12 align-content-center align-items-center">
+                    <img src="https://mobirise.com/extensions/dinerm4/assets/images/face2.jpg" class="d-block w-100 "
+                      alt="..." style="height: 50vh;">
+
+                  </div>
+                  <div class="col-lg-6 col-md-12 col-sm-12 align-content-center align-items-center">
+                    <h2 class=""><i class="fa-solid fa-quote-left"></i></h2>
+                    <strong class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nesciunt
+                      consectetur, ipsum
+                      maiores,
+                      magni saepe odio quas sit eaque sed assumenda exercitationem totam earum. Omnis eum exercitationem
+                      rem
+                      deserunt est?</strong>
+
+                    <h5 class="pt-3">Anna Grayson <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="10" x2="250" y2="10" style="stroke:gray;stroke-width:12" />
+                      </svg>
+                    </h5>
+                    <p class="">Manager</p>
+                  </div>
+                      
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                    <img src="https://mobirise.com/extensions/dinerm4/assets/images/face3.jpg" class="d-block w-100"
+                      alt="" style="height: 50vh;">
+
+                  </div>
+                  <div class="col-lg-6 col-md-12 col-sm-12 align-content-center align-items-center">
+                    <h2 class=""><i class="fa-solid fa-quote-left"></i></h2>
+                    <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nesciunt consectetur,
+                      ipsum
+                      maiores,
+                      magni saepe odio quas sit eaque sed assumenda exercitationem totam earum. Omnis eum exercitationem
+                      rem
+                      deserunt est?</strong>
+                    <h5 class="pt-3">Anna Grayson <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="10" x2="250" y2="10" style="stroke:gray;stroke-width:12" />
+                      </svg>
+                    </h5>
+                    <p class="">Manager</p>
+
+                  </div>
+                      
+                </div>
+
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-lg-6 col-md-12 col-sm-12 align-content-center align-items-center">
+                    <img src="https://mobirise.com/extensions/dinerm4/assets/images/face4.jpg" class="d-block w-100"
+                      alt="..." style="height: 50vh;">
+
+                  </div>
+                  <div class="col-lg-6 col-md-12 col-sm-12 align-content-center align-items-center">
+                    <h2 class=""><i class="fa-solid fa-quote-left"></i></h2>
+                    <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nesciunt consectetur,
+                      ipsum
+                      maiores,
+                      magni saepe odio quas sit eaque sed assumenda exercitationem totam earum. Omnis eum exercitationem
+                      rem
+                      deserunt est?</strong>
+                    <h5 class="pt-3">Anna Grayson <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="10" x2="250" y2="10" style="stroke:gray;stroke-width:12" />
+                      </svg>
+                    </h5>
+                    <p class="">Manager</p>
+
+                  </div>
+                      
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="ten section ">
+    <div class="container-fluid bg-danger">
+      <div class="container">
+        <div class="row pt-5">
+          <h4 class="text-center text-white" style="font-family: cursive;text-transform: uppercase;">team</h4>
+          <h2 class="text-center text-white" style="font-weight: 900;">Behind the taste</h2>
+          <div class="row">
+            <div class="col-lg-3 col-sm-12 col-md-12">
+              <div class="card ">
+                <div class="card-img text-center">
+                  <img src="https://mobirise.com/extensions/dinerm4/assets/images/face2.jpg" class="" alt="Cinque Terre"
+                    style="border-radius: 50%; width: 25vh;height: 25vh;">
+
+                </div>
+                <h4 class="text-center">John Smith</h4>
+                <p class="text-center">Manager</p>
+                <h6 class="text-center"><i class="fa-brands fa-facebook-f shadow-sm " id="icon1"></i>
+                  <i class="fa-brands fa-twitter shadow-sm " id="icon"></i>
+                  <i class="fa-brands fa-google-plus-g" id="icon3"></i>
+                </h6>
+
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-12 col-md-12">
+              <div class="card1 card">
+                <div class="card-img text-center">
+                  <img src="https://mobirise.com/extensions/dinerm4/assets/images/face3.jpg" class=""
+                    style="height: 25vh; width: 25vh; border-radius: 50%;">
+
+                </div>
+                <h5 class="text-center">Anna Jane</h5>
+                <p class="text-center">Manager</p>
+                <h6 class="text-center"><i class="fa-brands fa-facebook-f shadow-sm " id="icon1"></i>
+                  <i class="fa-brands fa-twitter shadow-sm " id="icon"></i>
+                  <i class="fa-brands fa-google-plus-g" id="icon3"></i>
+                </h6>
+
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-12 col-md-12">
+              <div class="card1 card">
+                <div class="card-img text-center">
+                  <img src="https://mobirise.com/extensions/dinerm4/assets/images/face4.jpg" class=""
+                    style="width: 25vh; height: 25vh;border-radius: 50%;">
+
+                </div>
+                <h5 class="text-center">Ben James</h5>
+                <p class="text-center">Manager</p>
+                <h6 class="text-center"><i class="fa-brands fa-facebook-f shadow-sm " id="icon1"></i>
+                  <i class="fa-brands fa-twitter shadow-sm " id="icon"></i>
+                  <i class="fa-brands fa-google-plus-g" id="icon3"></i>
+                </h6>
+
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-12 col-md-12">
+              <div class=" card1 card">
+                <div class="card-img text-center">
+                  <img src="https://cdn7.dissolve.com/p/D430_49_199/D430_49_199_1200.jpg" class=""
+                    style="width: 25vh; height: 25vh;border-radius: 50%;">
+
+                </div>
+                <h5 class="text-center">Dan brown</h5>
+                <p class="text-center">Manager</p>
+                <h6 class="text-center"><i class="fa-brands fa-facebook-f shadow-sm " id="icon1"></i>
+                  <i class="fa-brands fa-twitter shadow-sm " id="icon"></i>
+                  <i class="fa-brands fa-google-plus-g" id="icon3"></i>
+                </h6>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+ </div>
+  <div class="eleven section">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-lg-6 col-md-12">
+            <form>
+              <h2 class="">Ask a question</h2>
+              <div class="mb-3">
+                <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+              </div>
+              <div class="mb-3">
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Phone Number">
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2">Your Message</textarea>
+                <div class="mb-3">
+                </div>
+                <button type="btn" class="btn btn-success text-uppercase"> send message</button>
+              </div>
+            </form>
+
+          </div>
+          <div class="col-md-12 col-lg-6">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.4163100132437!2d79.11432907401249!3d21.135824484095078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c74559f93a75%3A0x98069a3fbc53792b!2sICEICO%20TECHNOLOGIES%20PVT.%20LTD.!5e0!3m2!1sen!2sin!4v1719655383421!5m2!1sen!2sin"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+ </div>
+  <div class="eight section">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 align-content-center align-items-center">
+
+            <h5 class="text-danger  text-uppercase" style="font-family: cursive;">download app</h5>
+            <h2 class="" style="font-weight: 900;">Download the app.</h2>
+            <h2 class="" style="font-weight: 900;">Click order and enjoy.</h2>
+            <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, iste sequi dolorum eveniet,
+              ex natus, voluptates commodi expedita culpa libero impedit exercitationem dolore porro? Fugit corrupti
+              voluptate sit? Quod, rerum?</p>
+            <a class="btn btn-dark" href="https://play.google.com/store/games?device=windows&pli=1" target="_main"
+              style="border-radius: 50px;margin-bottom: 20px;"><span class=""><i
+                  class="fa-brands fa-google-play me-2"></i></span> Get it on Google play</a>
+
+            <a class="btn btn-dark" href="" style="border-radius: 50px;margin-bottom: 20px;"><i
+                class="fa-brands fa-apple me-2"></i>Get it on Google App Store</a>
+
+          </div>
+
+
+
+          <div class="col-lg-6 col-md-12">
+            <img
+              src="https://www.griffinbenefits.com/hs-fs/hubfs/smartphone_cell_phone_use_at_work.jpg?width=976&name=smartphone_cell_phone_use_at_work.jpg"
+              class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="nine section">
+    <div class="container-fluid bg-black">
+      <div class="container section">
+        <div class="row">
+          <div class="col">
+            <h2 class="section-head">
+              <span class="line"></span>
+              <img src="pizza-removebg-preview.png" class="responsive">
+              <span class="line"></span>
+            </h2>
+          </div>
+        </div>
+      </div>
+         
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
